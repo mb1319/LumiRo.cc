@@ -7,33 +7,39 @@ body {
     display: inline-block;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    width: 64px;
+}
+
 .logo img {
-    padding: 12px 16px 16px 12px;
-    height: 64px;
+    height: 20px;
 }
 
 .nav-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 12px;
 }
 
 .name-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 360px;
+    justify-content: flex-end;
+    width: 64px;
 }
 
 .nav-wrapper .name-container .team-name {
-    font-size: 28px;
+    display: none;
     margin: 0;
 }
 
 .nav-wrapper .name-container .motto {
-    font-size: 20px;
-    margin: 0 0 0 24px;
+    font-size: 12px;
+    display: none;
 }
 
 .topnav {
@@ -74,8 +80,6 @@ h1 {
 }
 
 .buttons button {
-    width: 10vw;
-    height: 7vh;
     text-align: center;
     display: inline-block;
     font-size: 1.5em;
@@ -104,12 +108,12 @@ h1 {
 
 .contentWrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: lightgrey;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     column-gap: 16px;
+    row-gap: 16px;
     padding: 16px;
     height: calc(100vh - 64px);
-    grid-template-rows: 1fr;
 }
 
 .contentWrapper .card {
@@ -119,6 +123,7 @@ h1 {
 .rtxCanvasWrapper {
     flex: 1;
     margin-top: 16px;
+    min-height: 300px;
 }
 
 .graphTitle {
@@ -178,21 +183,9 @@ input[type=range] {
     margin-bottom: 14px;
 }
 
-.logo {
-    width: 320px;
-}
-
-.name-container {
-    width: 320px;
-}
-
 .app-name {
-    margin: 14px 0 0 0;
-    font-size: 36px;
-}
-
-.modal-trigger {
-    margin-left: 16px;
+    margin: 2px 0 0 0;
+    font-size: 20px;
 }
 
 .modal {
@@ -206,4 +199,63 @@ input[type=range] {
 .random-rotation {
     margin-top: 8px;
     width: 100%
+}
+
+.large-buttons {
+    display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    .small-buttons {
+        display: none;
+    }
+
+    .large-buttons {
+        display: flex;
+    }
+
+    .logo img {
+        padding: 12px 16px 16px 12px;
+        height: 64px;
+    }
+
+    .app-name {
+        margin: 14px 0 0 0;
+        font-size: 36px;
+    }
+
+    .nav-wrapper {
+        padding: 0 16px;
+    }
+
+    .logo {
+        width: 320px;
+    }
+
+    .name-container {
+        width: 360px;
+    }
+
+    .nav-wrapper .name-container .motto {
+        font-size: 20px;
+        margin: 0 0 0 24px;
+        display: flex;
+    }
+
+    .nav-wrapper .name-container .team-name {
+        display: flex;
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .modal-trigger {
+        margin-left: 16px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .contentWrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
 }
